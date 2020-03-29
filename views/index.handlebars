@@ -4,20 +4,17 @@
 
 <h1>Eat Da Burger</h1>
 
-<h2>Create a Burger!</h2>
-
 <ul>
     {{#each burgers}}
-
+    <li>
+        <p>ID: {{this.id}}</p>
+        <p>Burger: {{this.burger}}</p>
+    </li>
+    {{/each}}
 </ul>
 
-<h2>Burgers that have been devoured!</h2>
+<form action="/" method="POST">
+    <textarea type="text" name="burger_name"></textarea>
 
-<ul>
-    {{#each burgers}}
-
-</ul>
-
-<h2>Add a Burger</h2>
-
+    <button type="submit">Submit</button>
 </form>
