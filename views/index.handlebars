@@ -7,8 +7,11 @@
 <ul>
     {{#each burgers}}
     <li>
-        <p>ID: {{this.id}}</p>
-        <p>Burger: {{this.burger}}</p>
+
+        <p>{{this.burger_name}}</p>
+        <form action="/" method="PUT">
+            <button type="submit">Devoured</button>
+        </form>
     </li>
     {{/each}}
 </ul>
