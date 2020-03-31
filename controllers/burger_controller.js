@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
     var burgerObj = {
       burgers: data
     };
-    console.log(burgerObj);
+    // console.log(burgerObj);
     res.render("index", burgerObj);
   });
 });
@@ -26,13 +26,13 @@ router.post("/", function(req, res) {
   );
 });
 
-router.put("/", function(req, res) {
-  var condition = "id" + req.params.id;
+router.post("/:id", function(req, res) {
+  var condition = "id= " + req.params.id;
   console.log("condition", condition);
 
   burger.updateOne(
     {
-      devoured: req.body.devoured
+      devoured: true
     },
     condition,
     function(result) {
