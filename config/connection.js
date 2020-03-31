@@ -11,6 +11,12 @@ var connection = mysql.createConnection({
 
 // Make connection.
 connection.connect(function(err) {
+  var sql = "DELETE FROM burgers";
+  connection.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log("Number of records deleted: " + result.affectedRows);
+  });
+
   if (err) {
     console.error("error connecting: " + err.stack);
     return;

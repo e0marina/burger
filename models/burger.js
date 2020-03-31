@@ -18,6 +18,11 @@ var burger = {
     orm.updateOne("burgers", objColVals, condition, function(res) {
       cb(res);
     });
+  },
+  deleteTable: function(cb) {
+    orm.deleteTable("burgers", function(res) {
+      cb(res);
+    });
   }
 };
 //     * Export at the end of the `burger.js` file.

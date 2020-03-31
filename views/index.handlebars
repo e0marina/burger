@@ -27,14 +27,19 @@
     $(function () {
         $(".change-devoured").on("click", function (event) {
             var id = $(this).data("id");
+            var newDevoured = $(this).data("newDevoured");
+
+            var newdevouredState = {
+                devoured: newDevoured
+            };
 
 
             // Send the PUT request.
             $.ajax("/" + id, {
                 type: "PUT",
-                devoured: true
+                data: newdevouredState
             }).then(function () {
-
+                console.log("changed devoured to", newDevoured);
                 // Reload the page to get the updated list
                 location.reload();
             });
@@ -49,7 +54,7 @@
                     .val()
                     .trim()
             }
-        };
+        });
 
         // Send the POST request.
         $.ajax("/", {
@@ -61,7 +66,7 @@
             location.reload();
         });
     });
-    });
+
 
 
 </script>
