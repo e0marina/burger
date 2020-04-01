@@ -10,7 +10,7 @@
 
         <p>{{this.burger_name}}</p>
         <button class="change-devoured" data-id="{{id}}">
-            {{#if devoured}}Eat Me!{{else}}All Done!{{/if}}
+            {{#if devoured}}That was Yummy!{{else}}Eat the Burger!{{/if}}
         </button>
     </li>
     {{/each}}
@@ -19,7 +19,7 @@
 <form class="create-form">
     <div class="form-group">
         <label for="bur">Add a Burger:</label>
-        <input type="text" id="bur" name="burger_name">
+        <input type="text" id="bur">
     </div>
     <button type="submit">Submit</button>
 </form>

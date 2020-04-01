@@ -9,7 +9,7 @@ $(function() {
 
     // Send the PUT request.
     $.ajax("/" + id, {
-      type: "POST",
+      type: "PUT",
       data: newdevouredState
     }).then(function() {
       console.log("changed devoured to", newDevoured);
